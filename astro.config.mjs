@@ -10,4 +10,7 @@ export default defineConfig({
   integrations: [tailwind(), sitemap()],
   output: "hybrid",
   adapter: vercel(),
+  experimental: {
+    serverIslands: true,
+  },
 });

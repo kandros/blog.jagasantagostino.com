@@ -1,17 +1,17 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseHead from '@/components/BaseHead.astro';
+import Layout from '@/components/Layout.astro';
 
 const articles = await getCollection('articles');
 ---
-<head>
-  <BaseHead />
-</head>
-
-<ul>
-  {articles.map((a) => (
-    <li>
-      <a href={`/articles/${a.slug}`}>{a.data.title}</a> 
+<Layout>
+  <h2>Articles</h2>
+  <ul>
+    {articles.map((a) => (
+      <li>
+      <a href={`/articles/${a.slug}`} class="text-blue-700 underline visited:text-purple-900">{a.data.title}</a> 
     </li>
   ))}
 </ul>
+</Layout>
