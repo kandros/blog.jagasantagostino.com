@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://blog.jagasantagostino.com/sitemap-index.xml

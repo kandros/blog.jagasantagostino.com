@@ -1,0 +1,17 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '@/components/BaseHead.astro';
+
+const articles = await getCollection('articles');
+---
+<head>
+  <BaseHead />
+</head>
+
+<ul>
+  {articles.map((a) => (
+    <li>
+      <a href={`/articles/${a.slug}`}>{a.data.title}</a> 
+    </li>
+  ))}
+</ul>
