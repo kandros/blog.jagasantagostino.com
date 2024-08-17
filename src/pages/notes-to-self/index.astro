@@ -1,0 +1,43 @@
+---
+import BaseHead from "@/components/BaseHead.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("notes-to-self")).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet" />
+
+    <style>
+      h2 {
+        font-family: "Nothing You Could Do", cursive;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="mx-auto max-w-5xl border">
+      <section>
+        <ul class="grid grid-cols-1 gap-8 sm:grid-cols-2">
+          {
+            posts.map((post) => (
+              <li class="">
+                <a href={`/notes-to-self/${post.slug}/`}>
+                  <h2 class="mt-2 leading-6 text-2xl">{post.data.title}</h2>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
