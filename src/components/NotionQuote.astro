@@ -1,0 +1,25 @@
+---
+import { getRandomQuote } from "@/lib/notion";
+
+const quote = await getRandomQuote();
+---
+
+<div class="bg-purple-100 p-8 rounded-lg shadow-md max-w-2xl">
+  <blockquote class="mb-6">
+    <p class="text-gray-800 text-lg leading-relaxed mb-4">"{quote.text}"</p>
+    <footer>
+      <cite class="flex items-center">
+        <span  class="text-purple-600 hover:text-purple-800 transition-colors duration-200 font-medium">
+          {quote.source}
+        </span>
+        {quote.author && (
+          <span class="ml-2 text-gray-600">
+            by <span class="font-semibold">{quote.author}</span>
+          </span>
+        )}
+      </cite>
+    </footer>
+  </blockquote>
+</div>
+
+

@@ -1,6 +1,5 @@
-// 1. Import utilities from `astro:content`
 import { defineCollection, z } from "astro:content";
-// 2. Define your collection(s)
+
 const articlesCollection = defineCollection({
   type: "content", // v2.5.0 and later
   schema: z.object({
@@ -12,8 +11,18 @@ const articlesCollection = defineCollection({
     tags: z.array(z.string()).optional(),
   }),
 });
-// 3. Export a single `collections` object to register your collection(s)
-//    This key should match your collection directory name in "src/content"
+
+const notesToSelfCollection = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    pubDate: z.coerce.date(),
+    updatedDate: z.coerce.date().optional(),
+    tags: z.array(z.string()).optional(),
+  }),
+});
+
 export const collections = {
   articles: articlesCollection,
+  "notes-to-self": notesToSelfCollection,
 };
