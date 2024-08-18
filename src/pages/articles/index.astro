@@ -5,7 +5,9 @@ import Layout from '@/components/Layout.astro';
 const articles = await getCollection('articles');
 ---
 <Layout>
-  <h2>Articles</h2>
+  <div class="bg-[var(--cream-color)] pt-20 pb-28 px-16">
+    <h2 class="mb-12 text-4xl">Articles</h2>
+  </div>
   <ul>
     {articles.map((a) => (
       <li>

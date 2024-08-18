@@ -3,6 +3,15 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --heading-color: #111;
+    --text-color: #333;
+    --bg-color: #fff;
+    --border-color: #edeade;
+    --cream-color: #f9f8f4;
+    --muted-color: #666;
+  }
+
   h1 {
     @apply text-2xl font-bold;
   }
@@ -13,4 +22,47 @@
   textarea {
     field-sizing: content;
   }
+
+  p {
+    font-size: 21px;
+    line-height: 2.15rem;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--heading-color);
+  }
+
+  h1 {
+    font-size: 46px;
+    line-height: 125%;
+    letter-spacing: -1.5px;
+  }
+
+  h2 {
+    font-size: 26px;
+    margin-top: 0;
+    padding-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  /* For big first letter in post  */
+  /* .single-post .page__content > p.small:first-child + p::first-letter {
+    font-size: 70px;
+    line-height: 68px;
+    float: left;
+    padding-right: 10px;
+  }
+  .single-post .page__content > p:not(.small):first-child::first-letter {
+    font-size: 70px;
+    line-height: 68px;
+    float: left;
+    padding-right: 10px;
+  } */
 }

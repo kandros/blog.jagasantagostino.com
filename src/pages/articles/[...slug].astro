@@ -13,6 +13,16 @@ const { Content } = await entry.render();
 ---
 
 <Layout>
-  <h1>{entry.data.title}</h1>
-  <Content />
+  <div class="border-t border-t-[var(--border-color)] ">
+
+    <div class="mr-[27px] pt-[120px] max-w-[890px] border-r-[1px] border-[var(--border-color)] h-full ">
+      <div class="pl-[64px] pb-[120px] border-b border-b-[var(--border-color)]">
+        <h1>{entry.data.title}</h1>
+      </div>
+      
+      <div class="pl-[64px]  pt-[100px] pb-[120px]">
+        <Content />
+      </div>
+    </div>
+  </div>
 </Layout>
