@@ -38,7 +38,10 @@ export async function getRandomQuote(): Promise<QuoteType> {
       author: page.properties.author.select?.name || null,
     } satisfies QuoteType;
 
-    console.log("Fetched random entry:", quote);
+    if (process.env.NODE_ENV === "development") {
+      console.log("Fetched random entry:", quote);
+    }
+
     return quote;
   } catch (error) {
     console.error("Error fetching random entry:", error);

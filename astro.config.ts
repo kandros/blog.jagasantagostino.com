@@ -12,6 +12,7 @@ export default defineConfig({
   output: "hybrid",
   adapter: vercel(),
   experimental: {
+    contentIntellisense: true,
     serverIslands: true,
     env: {
       schema: {
