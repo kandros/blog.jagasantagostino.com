@@ -3,6 +3,8 @@ import Layout from "@/components/Layout.astro";
 import NotionQuote from "@/components/NotionQuote.astro";
 ---
 
+
+
 <Layout>
 	<div class="grid place-items-center h-screen font-thin text-xl">
 		<h1>Jaga Santagostino's digital garden 🌱</h1>
@@ -14,6 +16,8 @@ import NotionQuote from "@/components/NotionQuote.astro";
 		<h2>
 			A random quote form my collection
 		</h2>
-		<NotionQuote server:defer />
+		<NotionQuote server:defer>
+			<div slot="fallback">loading...</div>
+		</NotionQuote>
 </Layout>
 

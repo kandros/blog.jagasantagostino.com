@@ -2,6 +2,8 @@
 import { getRandomQuote } from "@/lib/notion";
 
 const quote = await getRandomQuote();
+// Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=300");
+// Astro.response.headers.set("x-data", "stocazzo");
 ---
 
 <div class="bg-purple-100 p-8 rounded-lg shadow-md max-w-2xl">
