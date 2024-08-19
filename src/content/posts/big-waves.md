@@ -15,7 +15,7 @@ Here in sardinia theres a lot of wind, like A LOT of wind. didnt expect that.
 i avoided going to the beach because of the wind in the past cause i felt like i was only enjoying the calm sea.
 
 the one day is was to hot that i went anyway.
-I staid there playing with the strong waves, running into them, punching them, trying to swim following the waves or against them.
+I staid there playing with the strong waves, running into them, punching them, trying to swim following the waves or against them, i even challenged myself to swim against the current as fast as I could until I had to stop to breath.
 
 I had a lot of fun, a different feeling of freedom compared with the cal of floating and thinking.
 
