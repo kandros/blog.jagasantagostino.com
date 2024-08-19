@@ -22,7 +22,18 @@ const notesToSelfCollection = defineCollection({
   }),
 });
 
+const publicJournalCollection = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    pubDate: z.coerce.date(),
+    updatedDate: z.coerce.date().optional(),
+    tags: z.array(z.string()).optional(),
+  }),
+});
+
 export const collections = {
   articles: articlesCollection,
   "notes-to-self": notesToSelfCollection,
+  "public-journal": publicJournalCollection,
 };
