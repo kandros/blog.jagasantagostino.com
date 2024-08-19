@@ -29,9 +29,15 @@ importers:
       '@notionhq/client':
         specifier: ^2.2.15
         version: 2.2.15
+      accessible-colors:
+        specifier: ^1.0.7
+        version: 1.0.7
       astro:
         specifier: ^4.14.2
         version: 4.14.2(@types/node@22.4.1)(rollup@4.21.0)(typescript@5.5.4)
+      randomcolor:
+        specifier: ^0.6.2
+        version: 0.6.2
       tailwindcss:
         specifier: ^3.4.10
         version: 3.4.10
@@ -42,6 +48,9 @@ importers:
       '@tailwindcss/typography':
         specifier: ^0.5.14
         version: 0.5.14(tailwindcss@3.4.10)
+      '@types/randomcolor':
+        specifier: ^0.5.9
+        version: 0.5.9
 
 packages:
 
@@ -676,6 +685,9 @@ packages:
   '@types/node@22.4.1':
     resolution: {integrity: sha512-1tbpb9325+gPnKK0dMm+/LMriX0vKxf6RnB0SZUqfyVkQ4fMgUSySqhxE/y8Jvs4NyF1yHzTfG9KlnkIODxPKg==}
 
+  '@types/randomcolor@0.5.9':
+    resolution: {integrity: sha512-k58cfpkK15AKn1m+oRd9nh5BnuiowhbyvBBdAzcddtARMr3xRzP0VlFaAKovSG6N6Knx08EicjPlOMzDejerrQ==}
+
   '@types/sax@1.2.7':
     resolution: {integrity: sha512-rO73L89PJxeYM3s3pPPjiPgVVcymqU490g0YO5n5By0k2Erzj6tay/4lr1CHAAU4JyOWd1rpQ8bCf6cZfHU96A==}
 
@@ -735,6 +747,10 @@ packages:
 
   abbrev@1.1.1:
     resolution: {integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==}
+
+  accessible-colors@1.0.7:
+    resolution: {integrity: sha512-JHUQl/bpkvgYDBRfzMSXV2e55D2ZZisYpj7bE/9ZClt9uorjovfRGcRZwJ8Wg66ee2SAp/A3PZjw+HPnpQoiTw==}
+    hasBin: true
 
   acorn-import-attributes@1.9.5:
     resolution: {integrity: sha512-n02Vykv5uA3eHGM/Z2dQrcD56kL8TyDb2p1+0P83PClMnC/nc+anbQRhIOWnSq4Ke/KvDPrY3C9hDtC/A3eHnQ==}
@@ -1974,6 +1990,9 @@ packages:
 
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
+
+  randomcolor@0.6.2:
+    resolution: {integrity: sha512-Mn6TbyYpFgwFuQ8KJKqf3bqqY9O1y37/0jgSK/61PUxV4QfIMv0+K2ioq8DfOjkBslcjwSzRfIDEXfzA9aCx7A==}
 
   read-cache@1.0.0:
     resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}
@@ -3265,6 +3284,8 @@ snapshots:
     dependencies:
       undici-types: 6.19.6
 
+  '@types/randomcolor@0.5.9': {}
+
   '@types/sax@1.2.7':
     dependencies:
       '@types/node': 17.0.45
@@ -3350,6 +3371,8 @@ snapshots:
   '@vscode/l10n@0.0.18': {}
 
   abbrev@1.1.1: {}
+
+  accessible-colors@1.0.7: {}
 
   acorn-import-attributes@1.9.5(acorn@8.12.1):
     dependencies:
@@ -4942,6 +4965,8 @@ snapshots:
   property-information@6.5.0: {}
 
   queue-microtask@1.2.3: {}
+
+  randomcolor@0.6.2: {}
 
   read-cache@1.0.0:
     dependencies:

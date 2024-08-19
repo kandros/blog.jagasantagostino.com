@@ -34,7 +34,7 @@ export async function getRandomQuote(): Promise<QuoteType> {
     const page = response.results[0] as any;
     const quote = {
       text: page.properties.Name.title[0]?.plain_text || "No title",
-      source: page.properties.source.select?.name || "No source",
+      source: page.properties.source.select?.name || null,
       author: page.properties.author.select?.name || null,
     } satisfies QuoteType;
 

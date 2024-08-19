@@ -6,18 +6,22 @@ import NotionQuote from "@/components/NotionQuote.astro";
 
 
 <Layout>
-	<div class="grid place-items-center h-screen font-thin text-xl">
+	<div class="grid place-items-center pt-[30%] font-thin text-xl">
 		<h1>Jaga Santagostino's digital garden 🌱</h1>
 	</div>
 	
 	<!-- <a href="/articles" class="text-blue-700 underline visited:text-purple-900">Articles</a> -->
 
 
-		<h2>
-			A random quote form my collection
-		</h2>
-		<NotionQuote server:defer>
-			<div slot="fallback">loading...</div>
-		</NotionQuote>
+		<div class="text-center">
+			<h2 class="text-xs font-light m-2">
+				A random quote form my collection
+			</h2>
+			 <div class="grid place-items-center">
+				<NotionQuote server:defer>
+					<div slot="fallback">loading...</div>
+				</NotionQuote>
+			 </div>
+		</div>
 </Layout>
 
