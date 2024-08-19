@@ -10,7 +10,9 @@ export async function getStaticPaths() {
     props: {note},
   }));
 }
-type Props = CollectionEntry<"notes">;
+type Props = {
+  note:CollectionEntry<"notes">
+};
 
 const {note} = Astro.props;
 const { Content } = await note.render();
