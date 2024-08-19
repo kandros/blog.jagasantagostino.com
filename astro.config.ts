@@ -20,6 +20,10 @@ export default defineConfig({
           context: "server",
           access: "secret",
         }),
+        ADMIN_ENDPOINT_TOKEN: envField.string({
+          context: "server",
+          access: "secret",
+        }),
       },
     },
   },
