@@ -1,7 +1,11 @@
 ---
 title: Big waves
 description: The big waves
-date: 13 Aug 2024
+pubDate: 13 Aug 2024
+draft: true
+category: public-journal
+tags:
+  - sea
 ---
 
 prev:

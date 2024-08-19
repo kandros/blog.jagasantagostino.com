@@ -4,21 +4,21 @@ import FormattedDate from "@/components/FormattedDate.astro";
 import { type CollectionEntry, getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("notes-to-self");
-  return posts.map((post) => ({
-    params: { slug: post.slug },
-    props: post,
+  const notes = await getCollection("notes");
+  return notes.map((note) => ({
+    params: { slug: note.slug },
+    props: {note},
   }));
 }
-type Props = CollectionEntry<"notes-to-self">;
+type Props = CollectionEntry<"notes">;
 
-const post = Astro.props;
-const { Content } = await post.render();
+const {note} = Astro.props;
+const { Content } = await note.render();
 ---
 
 <html lang="en">
   <head>
-    <BaseHead title={post.data.title} />
+    <BaseHead title={note.data.title} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet" />
@@ -39,17 +39,17 @@ const { Content } = await post.render();
           <div>
             <div>
               <div class="mb-4">
-                <FormattedDate date={post.data.pubDate} />
+                <FormattedDate date={note.data.pubDate} />
               </div>
               {
-                post.data.updatedDate && (
+                note.data.updatedDate && (
                   <div>
-                    Last updated on <FormattedDate date={post.data.updatedDate} />
+                    Last updated on <FormattedDate date={note.data.updatedDate} />
                   </div>
                 )
               }
             </div>
-            <h2 class="mb-1">{post.data.title}</h2>
+            <h2 class="mb-1">{note.data.title}</h2>
           </div>
 
           <Content />
