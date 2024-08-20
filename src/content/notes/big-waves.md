@@ -9,7 +9,7 @@ tags:
 ---
 
 prev:
-[ready to swim](/posts/ready-to-swim) 
+[ready to swim](/notes/ready-to-swim) 
 
 Here in sardinia theres a lot of wind, like A LOT of wind. didnt expect that.
 i avoided going to the beach because of the wind in the past cause i felt like i was only enjoying the calm sea.
