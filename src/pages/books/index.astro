@@ -1,0 +1,53 @@
+---
+import BaseHead from "@/components/BaseHead.astro";
+import { getCollection } from "astro:content";
+
+const books = (await getCollection("books")).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
+    <style>
+      h2 {
+        /* font-family: "Nothing You Could Do", cursive; */
+        font-family: "Indie Flower", cursive;
+        font-weight: 400;
+        font-style: normal;
+      }
+      p {
+        font-family: "Indie Flower", cursive;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="mx-auto max-w-5xl">
+      <h2>Meanigful books</h2>
+      <p>
+        I read a lot of books, but only some of them meant something for me, 
+      </p>
+      <section>
+        <ul class="grid grid-cols-1 gap-8 sm:grid-cols-2 ">
+          {
+            books.map((post) => (
+                <a href={`/books/${post.slug}/`} class="">
+              <li class="border py-6 px-4 h-full">
+                  <h2 class="p-0 mb-2 m-0 text-3xl">{post.data.title}</h2>
+                  <p class="text-md m-0">{post.data.description}</p>
+              </li>
+                </a>
+            ))
+          }
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

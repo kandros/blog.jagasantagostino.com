@@ -1,0 +1,62 @@
+---
+import BaseHead from "@/components/BaseHead.astro";
+import FormattedDate from "@/components/FormattedDate.astro";
+import { type CollectionEntry, getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const books = await getCollection("books");
+  return books.map((book) => ({
+    params: { slug: book.slug },
+    props: {book},
+  }));
+}
+type Props = {
+  book:CollectionEntry<"books">
+};
+
+const {book} = Astro.props;
+const { Content } = await book.render();
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={book.data.title} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet" />
+
+    <style>
+      h2 {
+        font-family: "Nothing You Could Do", cursive;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <article>
+        <div class="prose prose-sm">
+          <div>
+            <div>
+              <div class="mb-4">
+                <FormattedDate date={book.data.pubDate} />
+              </div>
+              {
+                book.data.updateDate && (
+                  <div>
+                    Last updated on <FormattedDate date={book.data.updateDate} />
+                  </div>
+                )
+              }
+            </div>
+            <h2 class="mb-1">{book.data.title}</h2>
+          </div>
+
+          <Content />
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
