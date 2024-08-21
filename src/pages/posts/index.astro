@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '@/components/Layout.astro';
 
-const posts = await getCollection('posts');
+const posts = await getCollection('notes');
 ---
 <Layout>
   <div class="bg-[var(--cream-color)] pt-20 pb-28 px-16">

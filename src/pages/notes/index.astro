@@ -1,5 +1,6 @@
 ---
 import BaseHead from "@/components/BaseHead.astro";
+import Layout from "@/components/Layout.astro";
 import { getCollection } from "astro:content";
 
 const notes = (await getCollection("notes")).sort(
@@ -7,8 +8,6 @@ const notes = (await getCollection("notes")).sort(
 );
 ---
 
-<!doctype html>
-<html lang="en">
   <head>
     <BaseHead />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,22 +24,18 @@ const notes = (await getCollection("notes")).sort(
       }
     </style>
   </head>
-  <body>
-    <main class="mx-auto max-w-5xl border">
-      <h2>Public Journal</h2>
-      <section>
-        <ul class="grid grid-cols-1 gap-8 sm:grid-cols-2">
-          {
-            notes.map((post) => (
-              <li class="">
-                <a href={`/notes/${post.slug}/`}>
-                  <h2 class="mt-2 leading-6 text-2xl">{post.data.title}</h2>
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </section>
-    </main>
-  </body>
-</html>
+  
+    <Layout>
+      <div class="bg-[var(--cream-color)] pt-20 pb-28 px-16">
+        <h2 class="mb-12 text-4xl">Public Journal</h2>
+      </div>
+      <ul>
+        {notes.map((n) => (
+          <li>
+          <a href={`/notes/${n.slug}`} class="text-blue-700 underline visited:text-purple-900">{n.data.title}</a> 
+        </li>
+      ))}
+    </ul>
+    </Layout>
+    
+    

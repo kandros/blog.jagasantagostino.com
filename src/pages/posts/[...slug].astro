@@ -3,7 +3,7 @@
 import Layout from '@/components/Layout.astro';
 import { getCollection } from 'astro:content';
 export async function getStaticPaths() {
-  const blogEntries = await getCollection('posts');
+  const blogEntries = await getCollection('notes');
   return blogEntries.map(entry => ({
     params: { slug: entry.slug }, props: { entry },
   }));
@@ -20,7 +20,7 @@ const { Content } = await entry.render();
         <h1>{entry.data.title}</h1>
       </div>
       
-      <div class="pl-[64px]  pt-[100px] pb-[120px]">
+      <div class="px-[64px]  pt-[100px] pb-[120px]">
         <Content />
       </div>
     </div>

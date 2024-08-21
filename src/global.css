@@ -24,7 +24,7 @@
   }
 
   [data-content="post"] p {
-    font-size: 21px;
+    /* font-size: 21px; */
     line-height: 2.15rem;
     margin-top: 24px;
     margin-bottom: 24px;

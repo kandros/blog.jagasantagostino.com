@@ -6,6 +6,7 @@ const notesCollection = defineCollection({
     title: z.string(),
     description: z.string().optional(),
     pubDate: z.coerce.date(),
+    category: z.enum(["public-journal", "notes-to-self"]).optional(),
     updatedDate: z.coerce.date().optional(),
     tags: z.array(z.string()).optional(),
     draft: z.boolean().optional(),
