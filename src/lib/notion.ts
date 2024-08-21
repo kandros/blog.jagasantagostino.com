@@ -13,8 +13,14 @@ type QuoteType = {
   author: string | null;
 };
 
+let cachedValue: QuoteType | null = null;
+
 export async function getRandomQuote(): Promise<QuoteType> {
   try {
+    if (cachedValue) {
+      return cachedValue;
+    }
+
     const response = await notion.databases.query({
       database_id: databaseId,
       sorts: [
@@ -41,6 +47,8 @@ export async function getRandomQuote(): Promise<QuoteType> {
     if (process.env.NODE_ENV === "development") {
       console.log("Fetched random entry:", quote);
     }
+
+    cachedValue = quote;
 
     return quote;
   } catch (error) {
