@@ -24,10 +24,14 @@
   }
 
   [data-content="post"] p {
-    /* font-size: 21px; */
-    line-height: 2.15rem;
-    margin-top: 24px;
-    margin-bottom: 24px;
+    line-height: 1.5em;
+    margin-top: 36px;
+    margin-bottom: 36px;
+    @apply font-light;
+  }
+
+  [data-content="post"] a {
+    @apply underline;
   }
 
   h1,
