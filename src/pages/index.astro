@@ -19,9 +19,20 @@ import NotionQuote from "@/components/NotionQuote.astro";
 			</h2>
 			 <div class="grid place-items-center">
 				<NotionQuote server:defer>
-					<div slot="fallback">loading...</div>
+					<div class="hidden" id="quote-fallback" slot="fallback">loading...</div>
 				</NotionQuote>
 			 </div>
 		</div>
+
+		<script>
+			setTimeout(() => {
+				// show fallback only if quote is not loaded withing 500ms
+				const quoteFallback = document.getElementById("quote-fallback");
+				if (quoteFallback) {
+					quoteFallback.classList.remove("hidden");
+				}
+			}, 500)
+			
+		</script>
 </Layout>
 
