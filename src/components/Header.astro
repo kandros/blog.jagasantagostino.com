@@ -1,7 +1,5 @@
 ---
-
 const isHomepage = Astro.url.pathname === "/";
-
 ---
 <header class="py-[40px] bg-[var(--cream-color)] px-[64px]" class:list={[{ "border-b": isHomepage }]}>
   <nav class="flex items-center justify-between">
