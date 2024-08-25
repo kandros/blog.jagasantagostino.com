@@ -8,6 +8,9 @@ export const GET: APIRoute = async ({ params, request }) => {
   const drafts = await getCollection("posts", ({ data }) => {
     return data.draft === true;
   });
+  const notes = await getCollection("notes", ({ data }) => {
+    return data.draft === true;
+  });
 
   if (request.headers.get("x-admin-token") !== ADMIN_ENDPOINT_TOKEN) {
     console.log("🤢🤢🤢🤢", ADMIN_ENDPOINT_TOKEN), request.headers.get("x-admin-token");
@@ -16,8 +19,10 @@ export const GET: APIRoute = async ({ params, request }) => {
 
   return new Response(
     JSON.stringify({
-      drafts: drafts.map((d) => d.data),
-      count: drafts.length,
+      posts: drafts.map((d) => d.data),
+      postsCount: drafts.length,
+      notes: notes.map((d) => d.data),
+      notesCount: notes.length,
     })
   );
 };
